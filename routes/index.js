@@ -8,12 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/cases/:year/:start/:end', function(req,res){
-  res.setHeader('Content-Type', 'application/json');
-    
   //searchCases(year, startCaseNum, endCaseNum)
-  scraper.searchCases(16, parseInt(req.params.start), parseInt(req.params.end))
+  scraper.searchCases(parseInt(req.params.year), parseInt(req.params.start), parseInt(req.params.end))
     .then(function(cases){
-      console.log('sending cases', cases)
       res.send(JSON.stringify(cases));
     }).catch(function(err){
       res.send([])

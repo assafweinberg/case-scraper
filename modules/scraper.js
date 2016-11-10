@@ -33,7 +33,6 @@ function makeRequest(results, urlObject, callback) {
   // make a http request 
   request(options, function(error, response, html){
 
-    console.log("Got results for "+urlObject.url);
 
     // Bail on errors
     if (error || response.statusCode !== 200) {
@@ -93,7 +92,6 @@ function makeRequest(results, urlObject, callback) {
     }
 
     //next
-    console.log('callback end')
     callback(); 
     
   });   
@@ -129,5 +127,5 @@ function searchCases(year, startCaseNum, endCaseNum) {
 
 
 module.exports = {
-  getCases: searchCases
+  searchCases: searchCases
 }
