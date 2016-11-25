@@ -4,13 +4,27 @@ block content
   .container
     h1 Case Scraper
     
-    .checkbox
-      label
-        input(type="checkbox")
-        | Include last year
-    .form-group
-      button.btn.btn-primary#btn-search Search
-    
+    .row
+      .col-sm-4
+        h2=moment().year()-1
+        .form-group
+          label Start
+          input.form-control(type="text", id="prev-start", placeholder="", value="0")
+        .form-group
+          label End
+          input.form-control(type="text", id="prev-end", placeholder="", value="1000")
+        h2=moment().year()
+        .form-group
+          label Start
+          input.form-control(type="text", id="current-start", placeholder="", value="0")
+        .form-group
+          label End
+          input.form-control(type="text", id="current-end", placeholder="", value="1000")      
+        .form-group
+          button.btn.btn-primary#btn-search Search
+          div#status
+    .row
+      h2 Results
+      ul#results
 
-     
 </div>

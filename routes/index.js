@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var scraper = require('../modules/scraper');
+var moment = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { 
+    title: 'Case Scraper',
+    moment: moment
+  });
 });
 
 router.post('/cases/:year/:start/:end', function(req,res){

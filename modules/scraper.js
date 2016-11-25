@@ -7,7 +7,6 @@ var finishedYears = [];
 const MAX_CONCURRENT = 20;
 const BASE_URL = "https://www.supremecourt.gov/search.aspx?filename=docketfiles/";
 const NOT_FOUND = '404';
-const MAX_CASE_NUM = 3000;
 
 function wasDistributed(text) {
   return text.includes('DISTRIBUTED for Conference');
