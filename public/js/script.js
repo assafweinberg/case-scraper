@@ -16,8 +16,10 @@ $(function(){
   }
 
   function callAllInSequence(fns){
-    if(fns.length === 0)
+    if(fns.length === 0){
+      statusText.text('Complete');
       return;
+    }
 
     var fn = fns.pop();
     fn().then(function(){
